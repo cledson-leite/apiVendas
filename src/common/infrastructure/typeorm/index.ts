@@ -16,3 +16,5 @@ const dataSource = new DataSource({
 })
 
 export default dataSource
+
+// yarn typeorm:dev -- -d ./src/common/infrastructure/typeorm/index.ts migration:run
