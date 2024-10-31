@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "npx dotenv-cli -e .env.development -- ts-node-dev -r tsconfig-paths/register --inspect --transpile-only --ignore-watch node_modules src/common/infrastructure/http/server.ts",
     "lint": "eslint .",
-    "test": "npx dotenv-cli -e .env.development -- jest --runInBand",
+    "test": "npx dotenv-cli -e .env.development -- jest --runInBand --detectOpenHandles",
     "typeorm:dev": "npx dotenv-cli -e .env.development -- ts-node-dev -r tsconfig-paths/register ./node_modules/typeorm/cli.js"
   },
   "dependencies": {
@@ -24,6 +24,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.9.0",
+    "@faker-js/faker": "^9.1.0",
     "@types/cors": "^2.8.17",
     "@types/express": "^4.17.21",
     "@types/jest": "^29.5.14",
