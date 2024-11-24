@@ -16,7 +16,7 @@ export class ProductsInMemoryRepository
   async findByName(name: string): Promise<ProductModel> {
     const product = this.items.find(item => item.name === name)
     if (!product) {
-      throw new NotFoundError(`Product not found with name ${name}`)
+      throw new NotFoundError(`Product not found with name: ${name}`)
     }
     return product
   }
@@ -33,7 +33,7 @@ export class ProductsInMemoryRepository
   async conflictName(name: string): Promise<void> {
     const product = this.items.find(item => item.name === name)
     if (product) {
-      throw new ConflictError(`Alright product with name ${name}`)
+      throw new ConflictError(`Alright product with name: ${name}`)
     }
   }
   protected async applyFilter(
