@@ -13,6 +13,7 @@ const dataSource = new DataSource({
   logging: false,
   entities: ['**/entities/**/*.ts'],
   migrations: ['**/migrations/**/*.ts'],
+  ssl: true,
 })
 
 export default dataSource
