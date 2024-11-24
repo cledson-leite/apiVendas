@@ -69,8 +69,8 @@ export abstract class InMemoryRepository<Model extends ModelProps>
 
   protected async applySort(
     items: Model[],
-    sort: string,
-    sortDir: 'asc' | 'desc',
+    sort: string = 'id',
+    sortDir: 'asc' | 'desc' = 'asc',
   ): Promise<Model[]> {
     if (!this.sortableFields.includes(sort)) {
       return items
